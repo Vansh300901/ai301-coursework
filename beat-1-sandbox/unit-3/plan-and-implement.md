@@ -19,7 +19,7 @@ Vansh300901
 
 **Plan comment**
 
-[INSERT THE LINK TO YOUR PLAN COMMENT HERE]
+https://github.com/codepath/pathreview-ai301-fa26-s3/issues/68#issuecomment-5984543185
 
 Hi maintainers, I am investigating this issue as part of a course project.
 
