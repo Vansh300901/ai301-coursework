@@ -15,15 +15,11 @@ label is not graded.
 
 **Pull request**
 
-[Link to the pull request you opened. It must be the pull request's own page on the Path
-Review repo, not your fork's branch page.]
+https://github.com/codepath/pathreview-ai301-fa26-s3/pull/89
 
 **Branch**
 
-[The name of the branch the pull request comes from, exactly as it appears in your fork.
-The naming shape is a type prefix, then the issue number, then a short description. **The
-issue number in the branch name must be the number of the issue the pull request fixes** —
-a name carrying any other number does not satisfy this field.]
+fix/68-empty-keyword-index
 
 ## Eval iterations
 
@@ -32,28 +28,21 @@ fields.
 
 **Run history**
 
-[The agreement score of each run you did, in order. A single run is a complete answer if
-only one run occurred. **The last score in your list must match the agreement line in the
-`eval-run.txt` you committed** — that file is the record of your final run.]
+19/20 scored items  (bar: 18/20: PASS)
 
 **Package analysis**
 
-[Pick one scored package (`pkg-01` through `pkg-20` — the four `calib-` packages are never
-scored). Name it by id, say what your rubric decided and what the gold label said, and
-explain why your rubric read it that way.]
+pkg-20: Gold label is 'reject', and my rubric decided 'reject'. The package addresses Ghostty issue #13604 with a clean, bounded fix and mode-2031 evidence. However, Ghostty's stated contribution policy strictly requires disclosing all AI assistance. The candidate PR description contained no AI-use disclosure. Because my rubric's 'Standards compliance' check mandates compliance with repository AI disclosure policies, the package failed and was correctly rejected.
 
 **Check rationale**
 
-[Quote one check from the `rubric.md` you uploaded to `tools/pr-precheck/`, exactly as it reads now.
-Then say why it reads that way — what you revised to get there, or what you rejected in
-favour of it.]
+"| Standards compliance | PR description, title, and diff read against repo facts, PR template, and stated contribution policy | All explicit repository requirements from repo facts, the PR template, and CONTRIBUTING.md are satisfied: required template sections and checklists are filled in rather than omitted, required issue links (e.g., Closes #...) are present, and AI usage is disclosed if the repository policy mandates disclosure. | required |"
+
+This check explicitly includes verifying whether "AI usage is disclosed if the repository policy mandates disclosure" alongside required template sections and checklists. Without this explicit clause, rubrics easily overlook repository-specific AI disclosure policies (such as Ghostty in pkg-20) or required PR template checklists (such as pandas in pkg-01). I formulated this check to enforce both structured template compliance and external repository policies as required gates before submission.
 
 **Trade-offs**
 
-[Every check gives something up. Any one of these is a complete answer: a package whose
-result it changes, a canary you re-ran with `--only`, a case you accept it will miss, or a
-stated reason nothing changed elsewhere. "Nothing changed, and here is how I know" earns
-the point in full when the reason follows.]
+By enforcing strict evidence requirements on all failure paths named in the plan, my rubric rejected pkg-16 (minikube) because it judged the deferral of the start-path behavior as insufficiently evidenced, whereas the gold label accepted it as an honestly disclosed and scoped deferral. The trade-off is erring on the side of caution—holding back candidate PRs that defer planned scope unless the deferral and its boundaries are overwhelmingly clear—in order to prevent untested or silently drifted changes from slipping through.
 
 ---
 
