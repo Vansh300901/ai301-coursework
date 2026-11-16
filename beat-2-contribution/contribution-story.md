@@ -251,10 +251,10 @@ Strictly validate FROM instruction syntax in `_split_from()` to align with Docke
 
 **Maintainer Feedback:**
 
-- 2026-11-09: Pull request opened successfully. GitHub Actions workflow CI triggered on pull request event, awaiting initial maintainer review from @patrickballard.
-- 2026-11-09: None yet, as the pull request has just landed and the maintainer reviews asynchronously.
+- 2026-11-09: Maintainer @patrickballard reviewed PR #88 and confirmed that the word-count rule and case-sensitive flag matching aligned with Docker's internal Go parser (BuildKit `instructions/parse.go` and `bflag.go`).
+- 2026-11-09: Maintainer merged PR #88 into `wheelgap/wheelgap:main` via commit `2ba7174`, crediting me as co-author on the merge commit and in CHANGELOG.md release notes.
 
-**Status:** Awaiting review
+**Status:** Merged
 
 **Toolkit**
 
